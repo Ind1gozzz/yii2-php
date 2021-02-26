@@ -21,9 +21,15 @@ body {
     padding-top: 20px;
 }
 
+.site-index {
+    height: 100px;
+    width: 50%;
+}
+
 .jumbotron {
     text-align: center;
     background-color: transparent;
+    margin-bottom: 0px;
 }
 
 .jumbotron .btn {

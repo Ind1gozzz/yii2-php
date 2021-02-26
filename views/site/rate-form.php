@@ -3,29 +3,37 @@
     use yii\widgets\ActiveForm;
     
     $this -> title = 'Lab. 1';
+
 ?>
 
 <div class="site-index">
 
     <div class="jumbotron">
         <h1>Lab. 1</h1>
-
     </div>
 
 </div>
 
-<?php $form = ActiveForm::begin(); ?>
-    <?= $form -> field($model, 'name') -> label('Your name') ?>
-    <?= $form -> field($model, 'email') -> label('Your email') ?>
-    <?= $form -> field($model, 'age') -> label('Your age') ?>
-    <?= $form -> field($model, 'date') -> label('Date of visit') ?>
-    <?= $form -> field($model, 'favoritCuisine[]') -> label('Your favorite cuisine') -> dropDownList(
-        ['1' => 'Italian', '2' => 'French', '3' => 'Russian', '4' => 'Spainish'], ['prompt' => 'Select...'])?> 
-    <?= $form -> field($model, 'recomendate') -> label('Recommend to your friends ?') -> radioList(['1' => 'Yes', '2' => 'No']) ?> 
-    <?= $form -> field($model, 'text') -> label('Your comment') ?> 
-    <div class="form-group">
-        <?= Html::submitButton('Sendd', ['class' => 'btn btn-primary']) ?>
+<div class="row">
+    <div class="col-lg-6">
+        <?php $form = ActiveForm::begin(); ?>
+            <?= $form -> field($model, 'name') -> label("<h4>Your name</h4>") ?>
+            <?= $form -> field($model, 'email') -> label("<h4>Your email</h4>") ?>
+            <?= $form -> field($model, 'age') -> label("<h4>You age</h4>") ?>
+            <?= $form -> field($model, 'date') -> label("<h4>Date of visit</h4>") ?>
+            <?= $form -> field($model, 'favoritCuisine') -> label("<h4>Your favorite cuisine</h4>") -> dropDownList(
+                ['1' => 'Italian', '2' => 'French', '3' => 'Russian', '4' => 'Spainish'], ['prompt' => 'Select...'])?> 
+            <?= $form -> field($model, 'recomendate') -> label("<h4>Recommend to your friends ?</h4>") -> radioList(['Yes' => 'Yes', 'No' => 'No']) ?> 
+            <?= $form -> field($model, 'comment') -> label("<h4>Your comment</h4>") -> textarea(['rows' => 4])?>
+            <div class="form-group">
+                <?= Html::submitButton("<h5>Send</h5>", ['class' => 'btn btn-primary']) ?>
+            </div> 
+
+        <?php ActiveForm::end(); ?>
     </div>
 
-<?php ActiveForm::end(); ?>
+    <div class="col-lg-1">
+    </div>
 
+    
+</div>
