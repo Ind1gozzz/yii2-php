@@ -4,7 +4,7 @@
 
     $this -> title = 'Lab. 2';
 ?>
-<div class="site-index">
+<div class="">
 
     <div class="jumbotron">
         <h1>Lab. 2</h1>

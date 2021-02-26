@@ -6,7 +6,7 @@
 
 ?>
 
-<div class="site-index">
+<div class="">
 
     <div class="jumbotron">
         <h1>Lab. 1</h1>
@@ -17,7 +17,7 @@
 
 
 <div class="col-lg-5">
-        <h2>You entered the information: </h2>
+        <h2>Your sent comment: </h2>
 
         <table class="table table-striped table-bordered">
                 <tr>

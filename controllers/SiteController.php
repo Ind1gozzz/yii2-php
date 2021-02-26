@@ -169,4 +169,8 @@ class SiteController extends Controller
         return $this -> render('lab2');
     }
 
+    public function actionLab3()
+    {
+        return $this -> render('lab3');
+    }
 }

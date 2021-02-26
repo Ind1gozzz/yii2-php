@@ -6,7 +6,7 @@
 
 ?>
 
-<div class="site-index">
+<div class="">
 
     <div class="jumbotron">
         <h1>Lab. 1</h1>
