@@ -7,7 +7,7 @@
 <div class="">
 
     <div class="jumbotron">
-        <h1>Lab. 2</h1>
+        <h1>Hello Lab. 2</h1>
 
     </div>
 
