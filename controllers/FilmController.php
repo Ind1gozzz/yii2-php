@@ -2,27 +2,28 @@
 
     namespace app\controllers;
 
-    use yii\web\Controller;
+use app\models\Director;
+use yii\web\Controller;
     use yii\data\Pagination;
-    use app\models\Director;
+    use app\models\Film;
 
 
 
-    class DirectorController extends Controller
+    class FilmController extends Controller
     {
         public function actionIndex()
         {
-            $query = Director::find();
+            $query = Film::find();
             $pagination = new Pagination([
                 'defaultPageSize' => 100,
-                'totalCount' => $query->count(),
+                'totalCount' => $query -> count(),
             ]);
-            $directors = $query -> orderBy('Director_Name')
+            $films = $query -> orderBy('Film_Name')
                 -> offset($pagination -> offset)
                 -> limit($pagination -> limit)
                 -> all();
-            return $this ->render('index', [
-                'directors' => $directors,
+            return $this -> render('index', [
+                'films' => $films,
                 'pagination' => $pagination,
             ]);
         }

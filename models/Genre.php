@@ -5,8 +5,8 @@
     use yii\db\ActiveRecord;
         
 
-    
-    class Director extends ActiveRecord
+
+    class Genre extends ActiveRecord
     {
     //код класса
     }

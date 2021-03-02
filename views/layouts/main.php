@@ -44,7 +44,11 @@ AppAsset::register($this);
             ['label' => 'Labs', 'items' => [
                 ['label' => 'Info', 'url' => ['/site/info']],
                 ['label' => 'lab1', 'url' => ['/site/rate-form']],
-                ['label' => 'lab2', 'url' => ['/director/index']],
+                ['label' => 'lab2', 'items' => [
+                    ['label' => 'Directors', 'url' => ['/director/index']],
+                    ['label' => 'Genres', 'url' => ['/genre/index']],
+                    ['label' => 'Films', 'url' => ['/film/index']],
+                ]],
                 ['label' => 'lab3', 'url' => ['/site/lab3']],
             ]],
             Yii::$app->user->isGuest ? (

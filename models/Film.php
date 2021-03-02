@@ -5,8 +5,8 @@
     use yii\db\ActiveRecord;
         
 
-    
-    class Director extends ActiveRecord
+
+    class Film extends ActiveRecord
     {
     //код класса
     }

@@ -4,25 +4,25 @@
 
     use yii\web\Controller;
     use yii\data\Pagination;
-    use app\models\Director;
+    use app\models\Genre;
 
 
 
-    class DirectorController extends Controller
+    class GenreController extends Controller
     {
         public function actionIndex()
         {
-            $query = Director::find();
+            $query = Genre::find();
             $pagination = new Pagination([
                 'defaultPageSize' => 100,
-                'totalCount' => $query->count(),
+                'totalCount' => $query -> count(),
             ]);
-            $directors = $query -> orderBy('Director_Name')
+            $genres = $query -> orderBy('Genre_name')
                 -> offset($pagination -> offset)
                 -> limit($pagination -> limit)
                 -> all();
-            return $this ->render('index', [
-                'directors' => $directors,
+            return $this -> render('index', [
+                'genres' => $genres,
                 'pagination' => $pagination,
             ]);
         }
