@@ -8,5 +8,8 @@
     
     class Director extends ActiveRecord
     {
-    //код класса
+        public function getFilm()
+        {
+            return $this -> hasMany(Film::className(), ['Director_id' => 'id']);
+        }
     }

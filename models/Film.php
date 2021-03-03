@@ -8,5 +8,14 @@
 
     class Film extends ActiveRecord
     {
-    //код класса
+        public function getGenre()
+        {
+            return $this -> hasOne(Genre::className(), ['id' => 'Genre_id']);
+        }
+
+        public function getDirector()
+        {
+            return $this -> hasOne(Director::className(), ['id' => 'Director_id']);
+        }
     }
+

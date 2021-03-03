@@ -14,7 +14,9 @@
             <tr>
                 <th scope="col">Film name</th>
                 <th scope="col">Year</th>
-                <th scope="col">Rate</th>       
+                <th scope="col">Rate</th>    
+                <th scope="col">Director</th>
+                <th scope="col">Genre</th>    
             </tr>        
         </thead>
         <tbody>
@@ -23,6 +25,8 @@
                     <th scope="row"><?= Html::encode("{$film -> Film_Name}") ?> </th>
                     <th scope="row"><?= Html::encode("{$film -> Year}") ?> </th>
                     <th scope="row"><?= Html::encode("{$film -> Rate}") ?> </th>
+                    <th scope="row"><?= Html::encode("{$film -> director -> Director_Name}") ?> </th>
+                    <th scope="row"><?= Html::encode("{$film -> genre -> Genre_name}") ?> </th>
                 </tr>
                 <?php endforeach; ?>
         </tbody>

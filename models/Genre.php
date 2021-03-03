@@ -8,5 +8,8 @@
 
     class Genre extends ActiveRecord
     {
-    //код класса
+        public function getFilm()
+        {
+            return $this -> hasOMany(Film::className(), ['Genre_id' => 'id']);
+        }
     }
