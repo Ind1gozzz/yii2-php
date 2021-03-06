@@ -6,11 +6,10 @@
     use yii\web\Controller;
     use yii\data\Pagination;
     use app\models\Film;
-    use app\models\Genre;
 
 
 
-class FilmController extends Controller
+    class FilmController extends Controller
     {
         public function actionIndex()
         {
@@ -19,8 +18,8 @@ class FilmController extends Controller
                 'defaultPageSize' => 100,
                 'totalCount' => $query -> count(),
             ]);
-            $films = $query -> orderBy('Director_Name')
-                
+            $films = $query
+                -> orderBy('Director_Name')                
                 -> offset($pagination -> offset)
                 -> limit($pagination -> limit)
                 -> all();
@@ -28,5 +27,27 @@ class FilmController extends Controller
                 'films' => $films,
                 'pagination' => $pagination,
             ]);
+        }
+
+        public function actionTwenty()
+        {
+            $query = Film::Find() -> innerJoinWith('genre') -> innerJoinWith('director');
+            $films = $query
+                -> orderBy('Year')
+                -> where('Year >= 2000')
+                -> all();
+            return $this -> render('twenty', [
+                'films' => $films]);
+        }
+
+        public function actionQuantity()
+        {
+            $query = Film::find();
+            $films = $query
+                -> select('COUNT(id) as count, Director_id')
+                -> groupBy('Director_id')
+                -> all();
+            return $this -> render('quantity', [
+                'films' => $films]);
         }
     }

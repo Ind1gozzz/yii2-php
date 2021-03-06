@@ -46,8 +46,11 @@ AppAsset::register($this);
                 ['label' => 'lab1', 'url' => ['/site/rate-form']],
                 ['label' => 'lab2', 'items' => [
                     ['label' => 'Directors', 'url' => ['/director/index']],
+                    ['label' => 'Quantity', 'url' => ['/film/quantity']],
                     ['label' => 'Genres', 'url' => ['/genre/index']],
                     ['label' => 'Films', 'url' => ['/film/index']],
+                    ['label' => 'Twenty', 'url' => ['/film/twenty']],
+                    ['label' => 'Add new Director', 'url' => ['/director/addition-dir']],
                 ]],
                 ['label' => 'lab3', 'url' => ['/site/lab3']],
             ]],

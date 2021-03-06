@@ -8,6 +8,8 @@
 
     class Film extends ActiveRecord
     {
+        public $count;
+
         public function getGenre()
         {
             return $this -> hasOne(Genre::className(), ['id' => 'Genre_id']);
