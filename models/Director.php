@@ -24,11 +24,10 @@
         {
             return [
                 [['dname', 'birth', 'country', 'numberf'], 'required'],
-                ['birth', 'date', 'format' => 'dd-mm-yyyy'],
+                ['birth', 'date', 'format' => 'yyyy-mm-dd'],
                 ['dname', 'string', 'length' => [5, 30]],
                 ['numberf', 'number'],
                 ['dname', 'trim']
-
             ];
         }
     }

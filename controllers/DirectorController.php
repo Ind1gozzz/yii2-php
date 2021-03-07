@@ -9,9 +9,7 @@
     use yii\db\Expression;
     use yii\db\ActiveRecord;
 
-
-
-    class DirectorController extends Controller
+class DirectorController extends Controller
     {
         public function actionIndex()
         {
@@ -55,18 +53,20 @@
             $director = new Director();
             if ($director -> load(Yii::$app -> request -> post()) && $director -> validate())
             {
-                Yii::$app -> db -> createCommand() -> insert('director', [
-                    'Director_Name' => 'dname',
-                    'Birth_date' => 'birth',
-                    'Country' => 'Country',
-                    'Number_of_films' => 'numberf'
+                $query = Yii::$app -> db -> createCommand() -> insert('director', [
+                    'Director_Name' => $director -> dname,
+                    'Birth_date' => $director -> birth,
+                    'Country' => $director -> country,
+                    'Number_of_films' => $director -> numberf
                 ]) -> execute();
-                $director -> dname;
-                $director -> birth;
-                $director -> country;
-                $director -> numberf;
-                $director -> save();
 
+                // $query = new Director();
+                // $query -> dname = $director -> dname;
+                // $query -> birth = $director -> birth;
+                // $query -> country = $director -> country;
+                // $query -> numberf = $director -> numberf;
+                // $query -> save();
+        
                 return $this -> render('addition-dir-con', ['director' => $director]);
 
             } else
