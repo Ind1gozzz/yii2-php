@@ -2,7 +2,6 @@
     namespace app\models;
 
     use yii\base\Model;
-    use yii\base\validators;
 
     class RateForm extends Model
     {

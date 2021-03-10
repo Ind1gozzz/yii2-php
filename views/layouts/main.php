@@ -51,6 +51,7 @@ AppAsset::register($this);
                     ['label' => 'Films', 'url' => ['/film/index']],
                     ['label' => 'Twenty', 'url' => ['/film/twenty']],
                     ['label' => 'Add new Director', 'url' => ['/director/addition-dir']],
+                    ['label' => 'Find film', 'url' => ['/film/find-film']],
                 ]],
                 ['label' => 'lab3', 'url' => ['/site/lab3']],
             ]],

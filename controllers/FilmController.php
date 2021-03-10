@@ -2,7 +2,7 @@
 
     namespace app\controllers;
 
-    use app\models\Director;
+    use Yii;
     use yii\web\Controller;
     use yii\data\Pagination;
     use app\models\Film;
@@ -49,5 +49,25 @@
                 -> all();
             return $this -> render('quantity', [
                 'films' => $films]);
+        }
+
+        public function actionFindFilm()
+        {
+            $film = new Film();
+            $query = Film::find();
+            if ($film -> load(Yii::$app -> request -> post()))
+            {
+                $thwword = $film -> findw;
+                $films = $query
+                    -> where(['like', 'Film_Name',  $thwword])
+                    -> all();
+                return $this -> render('found-film', [
+                    'films' => $films,
+                    'film' => $film]);
+            } else
+            {
+                return $this -> render('find-film', [
+                    'film' => $film]);
+            }
         }
     }

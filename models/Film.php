@@ -9,6 +9,7 @@
     class Film extends ActiveRecord
     {
         public $count;
+        public $findw;
 
         public function getGenre()
         {

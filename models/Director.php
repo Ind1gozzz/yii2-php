@@ -8,7 +8,7 @@
     
     class Director extends ActiveRecord
     {
-        public $count;
+        //public $count;
 
         public $dname;
         public $birth;

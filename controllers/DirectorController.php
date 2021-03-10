@@ -61,7 +61,7 @@ class DirectorController extends Controller
                 ]) -> execute();
 
                 // $query = new Director();
-                // $query -> dname = $director -> dname;
+                // $query.dname = $director -> dname;
                 // $query -> birth = $director -> birth;
                 // $query -> country = $director -> country;
                 // $query -> numberf = $director -> numberf;
