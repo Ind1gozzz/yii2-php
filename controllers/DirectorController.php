@@ -82,8 +82,7 @@
 
             if ($director -> load(Yii::$app -> request -> post()) && $director -> validate())
             {
-                $query = Director::find()
-                    -> where('id', '=', '$director -> delid');
+                $query = Director::findOne(52);
                 $query -> delete();
 
                 return $this -> render('deleted-dir', ['director' => $director]);
