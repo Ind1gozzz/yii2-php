@@ -7,9 +7,10 @@
     use yii\data\Pagination;
     use app\models\Director;
     use yii\db\Expression;
-    use yii\db\ActiveRecord;
 
-class DirectorController extends Controller
+
+
+    class DirectorController extends Controller
     {
         public function actionIndex()
         {
@@ -61,7 +62,7 @@ class DirectorController extends Controller
                 ]) -> execute();
 
                 // $query = new Director();
-                // $query.dname = $director -> dname;
+                // $query -> dname = $director -> dname;
                 // $query -> birth = $director -> birth;
                 // $query -> country = $director -> country;
                 // $query -> numberf = $director -> numberf;
@@ -72,6 +73,23 @@ class DirectorController extends Controller
             } else
             {
                 return $this -> render('addition-dir', ['director' => $director]);
+            }
+        }
+
+        public function actionDeleteDir()
+        {
+            $director = new Director();
+
+            if ($director -> load(Yii::$app -> request -> post()) && $director -> validate())
+            {
+                $query = Director::find()
+                    -> where('id', '=', '$director -> delid');
+                $query -> delete();
+
+                return $this -> render('deleted-dir', ['director' => $director]);
+            } else
+            {
+                return $this -> render('delete-dir', ['director' => $director]);
             }
         }
     }

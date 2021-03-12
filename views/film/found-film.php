@@ -7,18 +7,25 @@
 ?>
 
     <h1>Films</h1>
-    <table class="table table-striped table-bordered table-hover table-dark">
-    <div class="table-responsive">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Film name</th>
-            </tr>        
-        </thead>
+    
         <tbody>
-            <?php foreach ($films as $film): ?>
+            <?php if ($films != null)
+            {
+                ?>
+                <table class="table table-striped table-bordered table-hover table-dark">
+                <div class="table-responsive">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Film name</th>
+                        </tr>        
+                    </thead>
+                <?php
+            foreach ($films as $film): ?>
                 <tr>
-                    <th scope="row"><?= Html::encode("{$film -> Film_Name}") ?> </th>
+                    <th scope="row"><?= Html::encode($film -> Film_Name) ?> </th>
                 </tr>
-                <?php endforeach; ?>
+                <?php endforeach;  } else { ?>
+                    <h2>The films has not found</h2>
+                    <?php } ?>
         </tbody>
     </table>

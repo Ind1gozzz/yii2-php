@@ -9,7 +9,7 @@
     class Film extends ActiveRecord
     {
         public $count;
-        public $findw;
+        public $findword;
 
         public function getGenre()
         {
@@ -19,6 +19,14 @@
         public function getDirector()
         {
             return $this -> hasOne(Director::className(), ['id' => 'Director_id']);
+        }
+
+        public function rules()
+        {
+            return [
+                ['findword', 'required'],
+                ['findword', 'string', 'length' => [3, 30]]
+            ];
         }
     }
 

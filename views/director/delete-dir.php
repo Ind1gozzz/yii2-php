@@ -9,7 +9,7 @@
 <div class="">
 
     <div class="jumbotron">
-        <h1>Find film by name</h1>
+        <h1>Delete director by id</h1>
     </div>
 
 </div>
@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col-lg-6">
         <?php $form = ActiveForm::begin(); ?>
-            <?= $form -> field($film, 'findword') -> label("<h4>Film name</h4>") ?>
+            <?= $form -> field($director, 'delid') -> label("<h4>Diector id</h4>") ?>
         
     </div>
     <div class="form-group">
