@@ -10,7 +10,7 @@
     {
         //public $count;
 
-        public $delid;
+        public $deleteId;
         public $dname;
         public $birth;
         public $country;
@@ -24,12 +24,12 @@
         function rules()
         {
             return [
-                [['dname', 'birth', 'country', 'numberf', 'delid'], 'required'],
+                [['dname', 'birth', 'country', 'numberf'], 'required'],
                 ['birth', 'date', 'format' => 'yyyy-mm-dd'],
                 ['dname', 'string', 'length' => [5, 30]],
                 ['numberf', 'number'],
                 ['dname', 'trim'],
-                ['delid', 'number']
+                ['deleteId', 'number']
             ];
         }
     }

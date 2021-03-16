@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col-lg-6">
         <?php $form = ActiveForm::begin(); ?>
-            <?= $form -> field($director, 'delid') -> label("<h4>Diector id</h4>") ?>
+            <?= $form -> field($director, 'deleteId') -> label("<h4>Diector id</h4>") ?>
         
     </div>
     <div class="form-group">

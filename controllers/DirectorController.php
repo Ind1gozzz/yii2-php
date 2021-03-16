@@ -8,9 +8,7 @@
     use app\models\Director;
     use yii\db\Expression;
 
-
-
-    class DirectorController extends Controller
+class DirectorController extends Controller
     {
         public function actionIndex()
         {
@@ -79,13 +77,16 @@
         public function actionDeleteDir()
         {
             $director = new Director();
+            $que = Director::find();
 
-            if ($director -> load(Yii::$app -> request -> post()) && $director -> validate())
+            if ($director -> load(Yii::$app -> request -> post()) && !is_null($director -> deleteId))
             {
-                $query = Director::findOne(52);
+                $query = $que
+                    -> where(['id' => $director -> deleteId])
+                    -> one();
                 $query -> delete();
 
-                return $this -> render('deleted-dir', ['director' => $director]);
+                return $this -> render('deleted-dir');
             } else
             {
                 return $this -> render('delete-dir', ['director' => $director]);

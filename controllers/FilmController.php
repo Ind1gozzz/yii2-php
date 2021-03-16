@@ -58,7 +58,7 @@
             if ($film -> load(Yii::$app -> request -> post()))
             {
             $films = $query
-                -> where(['like', 'Film_Name', "{$film -> findword}"])
+                -> where(['like', 'Film_Name', $film -> findword])
                 -> all();
             
                 return $this -> render('found-film', [
