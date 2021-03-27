@@ -92,4 +92,26 @@ class DirectorController extends Controller
                 return $this -> render('delete-dir', ['director' => $director]);
             }
         }
+
+        public function actionFindDirector()
+        {
+            $director = new Director();
+            $quest = Director::Find();
+
+            if ($director -> load(Yii::$app -> request -> post()) && !is_null($director -> findworddd))
+            {
+                $directors = $quest
+                    -> where(['like', 'Birth_date', $director -> findworddd])
+                    -> all();
+
+                return $this -> render('found-director', [
+                    'director' => $director,
+                    'directors' => $directors
+                ]);
+            } else
+            {
+                return $this -> render('find-director', ['director' => $director]);
+            }
+        }
+        
     }

@@ -53,6 +53,7 @@ AppAsset::register($this);
                     ['label' => 'Add new Director', 'url' => ['/director/addition-dir']],
                     ['label' => 'Find film', 'url' => ['/film/find-film']],
                     ['label' => 'Delete director', 'url' => ['/director/delete-dir']],
+                    ['label' => 'Find Dir by birth year', 'url' => ['/director/find-director']],
                 ]],
                 ['label' => 'lab3', 'url' => ['/site/lab3']],
             ]],

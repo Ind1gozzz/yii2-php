@@ -31,7 +31,7 @@
 
         public function actionTwenty()
         {
-            $query = Film::Find() -> innerJoinWith('genre') -> innerJoinWith('director');
+            $query = Film::Find();
             $films = $query
                 -> orderBy('Year')
                 -> where('Year >= 2000')
