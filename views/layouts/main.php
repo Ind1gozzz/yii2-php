@@ -67,7 +67,8 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+                ),
+            ['label' => 'Admin', 'url' => ['/admin/default/index']],
         ],
     ]);
     NavBar::end();
