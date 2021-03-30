@@ -73,6 +73,7 @@ class DirectorController extends Controller
                 return $this -> render('addition-dir', ['director' => $director]);
             }
         }
+<<<<<<< Updated upstream
 
         public function actionDeleteDir()
         {
@@ -92,4 +93,6 @@ class DirectorController extends Controller
                 return $this -> render('delete-dir', ['director' => $director]);
             }
         }
+=======
+>>>>>>> Stashed changes
     }

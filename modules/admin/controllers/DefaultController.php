@@ -1,20 +1,19 @@
 <?php
 
-namespace app\modules\admin\controllers;
+    namespace app\modules\admin\controllers;
 
-use yii\web\Controller;
+    use yii\web\Controller;
 
-/**
- * Default controller for the `admin` module
- */
-class DefaultController extends AppAdminController
-{
-    /**
-     * Renders the index view for the module
-     * @return string
-     */
-    public function actionIndex()
+
+    
+    class DefaultController extends AppAdminController
     {
-        return $this->render('index');
+        /**
+         * Renders the index view for the module
+         * @return string
+         */
+        public function actionIndex()
+        {
+            return $this->render('index');
+        }
     }
-}
