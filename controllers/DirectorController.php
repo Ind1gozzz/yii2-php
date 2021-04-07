@@ -73,26 +73,4 @@ class DirectorController extends Controller
                 return $this -> render('addition-dir', ['director' => $director]);
             }
         }
-<<<<<<< Updated upstream
-
-        public function actionDeleteDir()
-        {
-            $director = new Director();
-            $que = Director::find();
-
-            if ($director -> load(Yii::$app -> request -> post()) && !is_null($director -> deleteId))
-            {
-                $query = $que
-                    -> where(['id' => $director -> deleteId])
-                    -> one();
-                $query -> delete();
-
-                return $this -> render('deleted-dir');
-            } else
-            {
-                return $this -> render('delete-dir', ['director' => $director]);
-            }
-        }
-=======
->>>>>>> Stashed changes
     }

@@ -6,14 +6,10 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\modules\admin\models\Director;
 
-/**
- * DirectorSearch represents the model behind the search form of `app\modules\admin\models\Director`.
- */
+
+
 class DirectorSearch extends Director
 {
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
@@ -22,22 +18,12 @@ class DirectorSearch extends Director
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
     public function search($params)
     {
         $query = Director::find();

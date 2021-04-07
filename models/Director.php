@@ -10,10 +10,6 @@
     {
         //public $count;
 
-<<<<<<< Updated upstream
-        public $deleteId;
-=======
->>>>>>> Stashed changes
         public $dname;
         public $birth;
         public $country;
@@ -32,10 +28,7 @@
                 ['dname', 'string', 'length' => [5, 30]],
                 ['numberf', 'number'],
                 ['dname', 'trim'],
-<<<<<<< Updated upstream
-                ['deleteId', 'number']
-=======
->>>>>>> Stashed changes
+
             ];
         }
     }

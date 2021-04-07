@@ -5,30 +5,14 @@ namespace app\modules\admin\models;
 use Yii;
 use yii\db\ActiveRecord;
 
-/**
- * This is the model class for table "director".
- *
- * @property int $id
- * @property string|null $Director_Name
- * @property string|null $Birth_date
- * @property string|null $Country
- * @property int|null $Number_of_films
- *
- * @property Film[] $films
- */
+
 class Director extends ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function tableName()
     {
         return 'director';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
@@ -38,9 +22,6 @@ class Director extends ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function attributeLabels()
     {
         return [
@@ -52,11 +33,6 @@ class Director extends ActiveRecord
         ];
     }
 
-    /**
-     * Gets query for [[Films]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
     public function getFilms()
     {
         return $this->hasMany(Film::className(), ['Director_id' => 'id']);

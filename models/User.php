@@ -58,9 +58,4 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     {
         $this -> auth_key = Yii::$app -> security -> generateRandomString();
     }
-
-    public function getUsername()
-    {
-        return $this -> username;
-    }
 }

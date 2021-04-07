@@ -12,6 +12,7 @@ use app\models\ContactForm;
 use Codeception\Lib\Console\Message;
 use app\models\EntryForm;
 use app\models\RateForm;
+use app\models\SignUpForm;
 
 class SiteController extends Controller
 {
@@ -86,6 +87,22 @@ class SiteController extends Controller
         $model->password = '';
         return $this->render('login', [
             'model' => $model,
+        ]);
+    }
+
+    public function actionSignUpForm()
+    {
+        $model = new SignUpForm();
+        if ($model -> load(Yii::$app -> request -> post()) && $model -> validate() && $model -> SignUp())
+        {
+            $mode1 = new LoginForm();
+            $mode1 -> username = $model -> userName;
+            $mode1 -> password = $model -> password1;
+            $mode1 -> login();
+            return $this -> goBack();
+        }
+        return $this -> render('sign-up-form', [
+            'model' => $model
         ]);
     }
 

@@ -1,12 +1,11 @@
-<div class="admin-default-index">
-    <h1><?= $this->context->action->uniqueId ?></h1>
-    <p>
-        This is the view content for action "<?= $this->context->action->id ?>".
-        The action belongs to the controller "<?= get_class($this->context) ?>"
-        in the "<?= $this->context->module->id ?>" module.
-    </p>
-    <p>
-        You may customize this page by editing the following file: <br>
-        <code><?= __FILE__ ?></code>
-    </p>
-</div>
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link" href="?r=admin%2Fdirector"><h4>Table "Directors"</h4></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="?r=admin%2Ffilm"><h4>Table "Films"</h4></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="?r=admin%2Fgenre"><h4>Table "Genres"</h4></a>
+  </li>
+</ul>
